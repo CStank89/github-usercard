@@ -1,9 +1,17 @@
+import axios from 'axios'
+
 /*
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
-
+axios.get('https://api.github.com/users/Cstank89')
+  .then(stuff =>{
+    console.log(stuff.data)
+  })
+  .catch(error =>{
+    debugger
+  })
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -29,6 +37,33 @@
 */
 
 const followersArray = [];
+  function htmlMaker(object){
+    const card= document.createElement('div')
+    const img = document.createElement('img')
+    const info = document.createElement('div')
+    const h3 = document.createElement('h3')
+    const p1 = document.createElement('p')
+    const location = document.createElement('p')
+    const profile = document.createElement('p')
+    const profileTag = document.createElement('p')
+    const bio = document.createElement('p')
+    
+    info.classList.add('card-info')
+    h3.classList.add('name')
+    p1.classList.add('username')
+    
+    cards.appendChild(card)
+    card.appendChild(img)
+    card.appendChild(info)
+    info.appendChild(h3)
+    info.appendChild(p1)
+    info.appendChild(location)
+    info.appendChild(profile)
+    profile.appendChild(profileTag)
+    info.appendChild(bio)
+
+console.log(cards)
+}
 
 /*
   STEP 3: Create a function that accepts a single object as its only argument.
